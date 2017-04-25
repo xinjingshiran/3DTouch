@@ -15,6 +15,7 @@
 		D000AC241EAF39B5002DA477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D000AC221EAF39B5002DA477 /* LaunchScreen.storyboard */; };
 		D000AC2F1EAF39B5002DA477 /* _DTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D000AC2E1EAF39B5002DA477 /* _DTouchTests.m */; };
 		D000AC3A1EAF39B5002DA477 /* _DTouchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D000AC391EAF39B5002DA477 /* _DTouchUITests.m */; };
+		D000AC491EAF4DB1002DA477 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000AC481EAF4DB1002DA477 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D000AC351EAF39B5002DA477 /* 3DTouchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DTouchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D000AC391EAF39B5002DA477 /* _DTouchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DTouchUITests.m; sourceTree = "<group>"; };
 		D000AC3B1EAF39B5002DA477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D000AC471EAF4DB1002DA477 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D000AC481EAF4DB1002DA477 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				D000AC181EAF39B5002DA477 /* AppDelegate.m */,
 				D000AC1A1EAF39B5002DA477 /* ViewController.h */,
 				D000AC1B1EAF39B5002DA477 /* ViewController.m */,
+				D000AC471EAF4DB1002DA477 /* DetailViewController.h */,
+				D000AC481EAF4DB1002DA477 /* DetailViewController.m */,
 				D000AC1D1EAF39B5002DA477 /* Main.storyboard */,
 				D000AC201EAF39B5002DA477 /* Assets.xcassets */,
 				D000AC221EAF39B5002DA477 /* LaunchScreen.storyboard */,
@@ -279,6 +284,7 @@
 				D000AC1C1EAF39B5002DA477 /* ViewController.m in Sources */,
 				D000AC191EAF39B5002DA477 /* AppDelegate.m in Sources */,
 				D000AC161EAF39B5002DA477 /* main.m in Sources */,
+				D000AC491EAF4DB1002DA477 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
