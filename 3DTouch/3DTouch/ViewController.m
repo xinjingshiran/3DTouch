@@ -26,51 +26,11 @@
     self.title = @"列表";
     
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    
-//    [self checkForceTouchAvailable];
-    
-//    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-//                                                                                            action:@selector(longPress:)];
-//    longPress.minimumPressDuration = 0.1;
-//    [_tableView addGestureRecognizer:longPress];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)checkForceTouchAvailable
-{
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
-        
-        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-            
-            [self registerForPreviewingWithDelegate:self sourceView:self.view];
-        }
-    }
-}
-
-- (void)longPress:(UIGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateBegan) {
-        
-        CGPoint point = [recognizer locationInView:recognizer.view];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
-        
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        
-        if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
-            
-            if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-                
-                NSLog(@"add 3d touch");
-                
-                [self registerForPreviewingWithDelegate:self sourceView:cell];
-            }
-        }
-    }
 }
 
 #pragma mark - UITableView DataSource & Delegate -
@@ -86,7 +46,13 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
-    [self registerForPreviewingWithDelegate:self sourceView:cell];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        
+        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        }
+    }
     
     return cell;
 }
@@ -99,7 +65,7 @@
 #pragma mark - UIViewControllerPreviewing Delegate -
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location
-{    
+{
     if ([self.presentingViewController isKindOfClass:[DetailViewController class]]) {
         
         return nil;
